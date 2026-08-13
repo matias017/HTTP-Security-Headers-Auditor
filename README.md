@@ -1,4 +1,4 @@
-# HT# HTTP-Security-Headers-Auditor
+#  HTTP-Security-Headers-Auditor
 
 Script en Python que audita las cabeceras de seguridad HTTP de cualquier sitio web y genera una puntuación de "postura de seguridad web", simulando una tarea real de hardening/auditoría que se le pide a un analista SOC junior.
 
@@ -37,14 +37,14 @@ pip install -r requirements.txt
 
 ```bash
 python header_audit.py
-Ingresa el dominio a auditar (ej. example.com): example.com
+Ingresa el dominio a auditar (ej. google.com)
 ```
 
 También se puede adaptar fácilmente para recibir el dominio como argumento en vez de input interactivo (ver sección "Posibles mejoras").
 
 ## Ejemplo de salida
 
-Ver [`evidencias/ejemplo-salida.txt`](evidencias/ejemplo-salida.txt). Antes de subir el repo definitivo, reemplazá ese archivo por una captura real de tu terminal corriendo el script contra 2-3 dominios distintos (por ejemplo, un sitio bien configurado como `github.com` y uno más chico que probablemente tenga cabeceras faltantes).
+Ver en la carpeta de eidencia
 
 ## Alcance y consideraciones éticas
 
