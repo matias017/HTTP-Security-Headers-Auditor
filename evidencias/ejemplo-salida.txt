@@ -1,0 +1,42 @@
+Ejemplo de ejecución — python header_audit.py
+
+=== Dominio 1: github.com ===
+
+[*] Auditando cabeceras de seguridad para: https://github.com
+
+=== CABECERAS PRESENTES (5/6) ===
+[✓] Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+[✓] Content-Security-Policy: default-src 'none'; base-uri 'self'; ...
+[✓] X-Frame-Options: deny
+[✓] X-Content-Type-Options: nosniff
+[✓] Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+
+=== CABECERAS FALTANTES O RIESGOS (1) ===
+[X] Permissions-Policy -> Restringe el acceso a funciones del navegador (cámara, micro, etc.).
+
+Puntuación de Postura Web: 83.3%
+
+=== Dominio 2: google.com ===
+
+[*] Auditando cabeceras de seguridad para: https://google.com
+
+=== CABECERAS PRESENTES (1/6) ===
+[✓] X-Frame-Options: SAMEORIGIN
+
+=== CABECERAS FALTANTES O RIESGOS (5) ===
+[X] Strict-Transport-Security -> Protege contra ataques Man-in-the-Middle (HSTS).
+[X] Content-Security-Policy -> Previene ataques XSS e inyecciones de contenido.
+[X] X-Content-Type-Options -> Evita la interpretación incorrecta de tipos MIME.
+[X] Referrer-Policy -> Controla cuánta información de referencia se envía.
+[X] Permissions-Policy -> Restringe el acceso a funciones del navegador (cámara, micro, etc.).
+
+Puntuación de Postura Web: 16.7%
+
+--- Análisis comparativo ---
+GitHub muestra una configuración robusta de cabeceras de seguridad en su
+dominio principal, mientras que google.com (dominio raíz, sin subdominio
+específico) expone muy pocas cabeceras a este nivel. Esto no implica
+necesariamente que Google sea "inseguro": distintos servicios exponen
+distintas cabeceras según el contexto y el tipo de contenido servido.
+Sirve como ejemplo de que el score es un punto de partida para el triage,
+no una conclusión definitiva por sí sola.
